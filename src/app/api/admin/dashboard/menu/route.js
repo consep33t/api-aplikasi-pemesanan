@@ -9,7 +9,11 @@ export async function GET() {
       id: doc.id,
       ...doc.data(),
     }));
-    return NextResponse.json({ status: 200, data: items });
+    return NextResponse.json({
+      status: 200,
+      dataLength: items.length,
+      data: items,
+    });
   } catch (error) {
     console.error("Error fetching menu items:", error);
     return NextResponse.json({ status: 500, message: "Internal Server Error" });
