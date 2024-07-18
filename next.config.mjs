@@ -16,6 +16,10 @@ const nextConfig = {
             value: "http://localhost:3000",
           },
           {
+            key: "Access-Control-Allow-Origin",
+            value: "https://apllikasi-pemesanan.vercel.app",
+          },
+          {
             key: "Access-Control-Allow-Methods",
             value: "GET, POST, PUT, DELETE, OPTIONS",
           },
