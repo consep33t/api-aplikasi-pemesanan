@@ -1,12 +1,8 @@
 import { NextResponse } from "next/server";
 import { db } from "../../../../../../../../firebaseConfig";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import { middleware } from "../../../../../../../../midleware";
 
 export async function GET(request, { params }) {
-  const corsResponse = middleware(request);
-  if (corsResponse) return corsResponse;
-
   const { category } = params;
 
   try {
