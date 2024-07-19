@@ -8,16 +8,13 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // Terapkan header CORS ke semua rute API
         source: "/api/:path*",
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "http://localhost:3000",
-          },
-          {
-            key: "Access-Control-Allow-Origin",
-            value: "https://apllikasi-pemesanan.vercel.app",
+            value:
+              "http://localhost:3001" ||
+              "https://apllikasi-pemesanan.vercel.app",
           },
           {
             key: "Access-Control-Allow-Methods",

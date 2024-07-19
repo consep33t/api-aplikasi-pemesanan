@@ -2,8 +2,10 @@
 import { db } from "../../../../../../../firebaseConfig";
 import { NextResponse } from "next/server";
 import { deleteDoc, doc } from "firebase/firestore";
+import { unstable_noStore } from "next/cache";
 
 export async function DELETE(request, { params }) {
+  unstable_noStore();
   const { orderId } = params;
 
   try {

@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 import { db } from "../../../../../../../../firebaseConfig";
 import { collection, query, where, getDocs } from "firebase/firestore";
+import { unstable_noStore } from "next/cache";
 
 export async function GET(request, { params }) {
+  unstable_noStore();
   const { category } = params;
 
   try {
-    // Membuat query untuk mencari dokumen berdasarkan kategori
     const q = query(collection(db, "menu"), where("category", "==", category));
     const querySnapshot = await getDocs(q);
 
