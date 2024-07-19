@@ -6,7 +6,7 @@ export function middleware(request) {
 
   response.headers.set(
     "Access-Control-Allow-Origin",
-    `${process.env.NEXT_PUBLIC_API_URL_PROD || "http://localhost:3001"}`
+    `${process.env.NEXT_PUBLIC_API_URL_PROD}`
   );
   response.headers.set(
     "Access-Control-Allow-Methods",
@@ -21,9 +21,7 @@ export function middleware(request) {
     return new Response(null, {
       status: 204,
       headers: {
-        "Access-Control-Allow-Origin": `${
-          process.env.NEXT_PUBLIC_API_URL_PROD || "http://localhost:3001"
-        }`,
+        "Access-Control-Allow-Origin": `${process.env.NEXT_PUBLIC_API_URL_PROD}`,
         "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
         "Access-Control-Allow-Headers": "Content-Type, Authorization",
       },
