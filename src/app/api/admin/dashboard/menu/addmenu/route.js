@@ -4,7 +4,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 export async function POST(request) {
   try {
-    const { name, price, description, imageName, imageData, type } =
+    const { name, price, description, imageName, imageData, category } =
       await request.json();
 
     const storageRef = ref(storage, `menuImages/${imageName}`);
@@ -16,7 +16,7 @@ export async function POST(request) {
       price: parseFloat(price),
       description,
       imageUrl,
-      type,
+      category,
     });
 
     return new Response(
