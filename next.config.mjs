@@ -13,8 +13,7 @@ const nextConfig = {
           {
             key: "Access-Control-Allow-Origin",
             value:
-              "http://localhost:3001" ||
-              "https://apllikasi-pemesanan.vercel.app",
+              process.env.NEXT_PUBLIC_API_URL_PROD || "http://localhost:3001",
           },
           {
             key: "Access-Control-Allow-Methods",
