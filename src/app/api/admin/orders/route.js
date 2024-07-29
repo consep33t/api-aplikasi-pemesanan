@@ -13,10 +13,7 @@ export async function GET() {
           const ordersList = [];
           querySnapshot.forEach((doc) => {
             const orderData = { id: doc.id, ...doc.data() };
-            if (
-              orderData.status !==
-              "Pesanan Sudah Diambil, dan Sudah Melakukan Pembayaran"
-            ) {
+            if (orderData.status !== "Pesanan Selesai") {
               ordersList.push(orderData);
             }
           });

@@ -12,7 +12,10 @@ export async function GET(request, { params }) {
     const querySnapshot = await getDocs(q);
 
     if (!querySnapshot.empty) {
-      const items = querySnapshot.docs.map((doc) => doc.data());
+      const items = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
       return NextResponse.json({
         status: 200,
         dataLength: items.length,

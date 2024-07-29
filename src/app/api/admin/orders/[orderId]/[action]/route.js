@@ -7,9 +7,9 @@ export async function POST(request, { params }) {
 
   let newStatus;
   if (action === "complete") {
-    newStatus = "Pesanan Selesai, silahkan diambil";
+    newStatus = "Pesanan Di Proses";
   } else if (action === "pickup") {
-    newStatus = "Pesanan Sudah Diambil, dan Sudah Melakukan Pembayaran";
+    newStatus = "Pesanan Selesai";
   } else {
     return NextResponse.json({ status: 400, message: "Invalid action" });
   }
